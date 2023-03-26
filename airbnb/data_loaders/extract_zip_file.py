@@ -1,6 +1,7 @@
 import os
-import zipfile
 import tempfile
+import zipfile
+
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():
@@ -8,7 +9,7 @@ if 'test' not in globals():
 
 
 @data_loader
-def load_data_from_file(*args, **kwargs):
+def load_data_from_file():
     """
     Template for loading data from filesystem.
     Load data from 1 file or multiple file directories.
@@ -22,7 +23,7 @@ def load_data_from_file(*args, **kwargs):
     data_source_dir = os.path.join(project_dir, 'data-source')
     archive_zip = os.path.join(data_source_dir, 'archive.zip')
     extracted_dir = tempfile.mkdtemp()
-    
+
     if not os.path.isfile(archive_zip):
         raise FileNotFoundError(f'{archive_zip} not exist!')
 
@@ -36,7 +37,7 @@ def load_data_from_file(*args, **kwargs):
 
 
 @test
-def test_output(output, *args) -> None:
+def test_output(output) -> None:
     """
     Template code for testing the output of the block.
     """
