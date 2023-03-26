@@ -3,7 +3,7 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - load_extracted_csv_to_gcs
+  - clean_data
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -16,17 +16,32 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
+  downstream_blocks:
+  - load_to_gcs
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: clean_data
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - extract_zip_file
+  uuid: clean_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: load_extracted_csv_to_gcs
-  status: updated
+  name: load_to_gcs
+  status: executed
   type: data_exporter
   upstream_blocks:
-  - extract_zip_file
-  uuid: load_extracted_csv_to_gcs
+  - clean_data
+  uuid: load_to_gcs
 data_integration: null
 description: null
 extensions: {}
