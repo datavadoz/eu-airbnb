@@ -1,0 +1,36 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - load_extracted_csv_to_gcs
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: extract_zip_file
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: extract_zip_file
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_extracted_csv_to_gcs
+  status: updated
+  type: data_exporter
+  upstream_blocks:
+  - extract_zip_file
+  uuid: load_extracted_csv_to_gcs
+data_integration: null
+description: null
+extensions: {}
+name: etl_local_to_gcs
+type: python
+uuid: etl_local_to_gcs
+widgets: []
