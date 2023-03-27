@@ -1,1 +1,14 @@
-# https://docs.getdbt.com/reference/profiles.yml
+airbnb:
+  outputs:
+    dev:
+      dataset: staging
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /home/danh/workspace/self-study/eu-airbnb/cred/dtc-airbnb-33c84c172b76.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: dtc-airbnb
+      threads: 1
+      type: bigquery
+  target: dev
