@@ -21,13 +21,13 @@ def export_data(input_dir):
 
     storage_client = storage.Client()
     bucket = storage_client.bucket('dtc-airbnb')
-    parent_blob = datetime.datetime.now().strftime('%Y%m%d')
+    today_str = datetime.datetime.now().strftime('%Y%m%d')
 
     for path, _, files in os.walk(input_dir):
         parquet_files = [file for file in files if file.endswith('.parquet')]
         for parquet_file in parquet_files:
             parquet_file_path = os.path.join(path, parquet_file)
-            blob_path = f'{parent_blob}/{parquet_file}'
+            blob_path = f'{today_str}/{parquet_file}'
             print(f'Loading {parquet_file_path} to {blob_path} ...')
             bucket.blob(blob_path).upload_from_filename(parquet_file_path)
 
