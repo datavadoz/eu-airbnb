@@ -1,13 +1,3 @@
-{{ config(
-  database='dtc-airbnb',
-  schema='prod',
-  materialized='table',
-  partition_by={
-    'field': 'city',
-    'data_type': 'string',
-  }
-) }}
-
 WITH amsterdam AS (
   SELECT *
   FROM {{ ref('airbnb_amsterdam') }}
@@ -56,24 +46,44 @@ rome AS (
 vienna AS (
   SELECT *
   FROM {{ ref('airbnb_vienna') }}
-),
+)
 
-SELECT * FROM amsterdam
-UNION ALL
-SELECT * FROM athens
-UNION ALL
-SELECT * FROM barcelona
-UNION ALL
-SELECT * FROM berlin
-UNION ALL
-SELECT * FROM budapest
-UNION ALL
-SELECT * FROM lisbon
-UNION ALL
-SELECT * FROM london
-UNION ALL
-SELECT * FROM paris
-UNION ALL
-SELECT * FROM rome
-UNION ALL
-SELECT * FROM vienna
+SELECT
+  real_sum,
+  room_type,
+  is_shared_room,
+  is_private_room,
+  is_superhost,
+  is_multi_rooms,
+  is_business,
+  bedrooms,
+  person_capacity,
+  cleanliness_rating,
+  guest_satisfaction_rating,
+  central_distance,
+  metro_distance,
+  longitude,
+  latitude,
+  city,
+  is_weekend
+FROM (
+  SELECT * FROM amsterdam
+  UNION ALL
+  SELECT * FROM athens
+  UNION ALL
+  SELECT * FROM barcelona
+  UNION ALL
+  SELECT * FROM berlin
+  UNION ALL
+  SELECT * FROM budapest
+  UNION ALL
+  SELECT * FROM lisbon
+  UNION ALL
+  SELECT * FROM london
+  UNION ALL
+  SELECT * FROM paris
+  UNION ALL
+  SELECT * FROM rome
+  UNION ALL
+  SELECT * FROM vienna
+)

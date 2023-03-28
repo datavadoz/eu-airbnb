@@ -1,7 +1,7 @@
 airbnb:
   outputs:
     dev:
-      dataset: staging
+      dataset: airbnb
       job_execution_timeout_seconds: 300
       job_retries: 1
       keyfile: /home/danh/workspace/self-study/eu-airbnb/cred/dtc-airbnb-33c84c172b76.json
