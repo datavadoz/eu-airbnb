@@ -1,0 +1,942 @@
+version: 2
+
+models:
+  - name: airbnb_amsterdam
+    description: Cleaned Airbnb pricing data in Amsterdam.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['private', 'entire', 'shared']
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Amsterdam' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+              quote: false
+
+  - name: airbnb_athens
+    description: Cleaned Airbnb pricing data in Athens.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Athens' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_barcelona
+    description: Cleaned Airbnb pricing data in Barcelona.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Barcelona' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_berlin
+    description: Cleaned Airbnb pricing data in Berlin.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Berlin' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_budapest
+    description: Cleaned Airbnb pricing data in Budapest.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Budapest' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_lisbon
+    description: Cleaned Airbnb pricing data in Lisbon.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Lisbon' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_london
+    description: Cleaned Airbnb pricing data in London.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'London' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_paris
+    description: Cleaned Airbnb pricing data in Paris.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Paris' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_rome
+    description: Cleaned Airbnb pricing data in Rome.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Rome' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+
+  - name: airbnb_vienna
+    description: Cleaned Airbnb pricing data in Vienna.
+    columns:
+      - name: real_sum
+        description: The total price of the Airbnb listing.
+        tests:
+          - not_null
+      - name: room_type
+        description: The type of room being offered (e.g. private, shared, etc.).
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'private', 'entire', 'shared' ]
+      - name: is_shared_room
+        description: Whether the room is shared or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_private_room
+        description: Whether the room is private or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_superhost
+        description: Whether the host is a superhost or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_multi_rooms
+        description: Whether the listing is for multiple rooms or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: is_business
+        description: Whether the listing is for business purposes or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
+      - name: bedrooms
+        description: The number of bedrooms in the listing.
+        tests:
+          - not_null
+      - name: person_capacity
+        description: The maximum number of people that can stay in the room.
+        tests:
+          - not_null
+      - name: cleanliness_rating
+        description: The cleanliness rating of the listing.
+        tests:
+          - not_null
+      - name: guest_satisfaction_rating
+        description: The overall guest satisfaction rating of the listing.
+        tests:
+          - not_null
+      - name: central_distance
+        description: The distance from the city centre.
+        tests:
+          - not_null
+      - name: metro_distance
+        description: The distance from the nearest metro station.
+        tests:
+          - not_null
+      - name: longitude
+        description: The longitude of the listing.
+        tests:
+          - not_null
+      - name: latitude
+        description: The latitude of the listing.
+        tests:
+          - not_null
+      - name: city
+        description: The city of the listing.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'Vienna' ]
+      - name: is_weekend
+        description: Whether the listing is on weekend or not.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ 'true', 'false' ]
+              quote: false
