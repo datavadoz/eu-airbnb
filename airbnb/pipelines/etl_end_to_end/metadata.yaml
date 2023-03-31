@@ -1,0 +1,86 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - clean_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: extract_zip_file
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: extract_zip_file
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - load_to_gcs
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: clean_data
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - extract_zip_file
+  uuid: clean_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - extract_today_parquet_files
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_to_gcs
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - clean_data
+  uuid: load_to_gcs
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - load_today_parquet_files_to_bigquery
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: extract_today_parquet_files
+  status: executed
+  type: data_loader
+  upstream_blocks:
+  - load_to_gcs
+  uuid: extract_today_parquet_files
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_today_parquet_files_to_bigquery
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - extract_today_parquet_files
+  uuid: load_today_parquet_files_to_bigquery
+data_integration: null
+description: null
+extensions: {}
+name: etl_end_to_end
+type: python
+uuid: etl_end_to_end
+widgets: []
