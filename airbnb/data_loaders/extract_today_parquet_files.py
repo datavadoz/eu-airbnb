@@ -9,7 +9,7 @@ if 'test' not in globals():
 
 
 @data_loader
-def load_today_parquet_files():
+def load_today_parquet_files(*args):
     """
     Load all parquet files on today from GCS.
 
