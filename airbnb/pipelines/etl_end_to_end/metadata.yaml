@@ -66,7 +66,11 @@ blocks:
   color: null
   configuration:
     file_path: null
-  downstream_blocks: []
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_amsterdam
+  - airbnb/models/staging/airbnb_amsterdam
+  - airbnb/models/staging/airbnb_athens
+  - airbnb/models/staging/airbnb_barcelona
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -77,10 +81,56 @@ blocks:
   upstream_blocks:
   - extract_today_parquet_files
   uuid: load_today_parquet_files_to_bigquery
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_amsterdam.sql
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_amsterdam
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - load_today_parquet_files_to_bigquery
+  uuid: airbnb/models/staging/airbnb_amsterdam
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_athens.sql
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_athens
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - load_today_parquet_files_to_bigquery
+  uuid: airbnb/models/staging/airbnb_athens
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_barcelona.sql
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_barcelona
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - load_today_parquet_files_to_bigquery
+  uuid: airbnb/models/staging/airbnb_barcelona
 data_integration: null
 description: null
 extensions: {}
 name: etl_end_to_end
 type: python
+updated_at: '2023-04-03 23:56:29'
 uuid: etl_end_to_end
 widgets: []
