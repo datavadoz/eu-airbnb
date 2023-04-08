@@ -68,9 +68,6 @@ blocks:
     file_path: null
   downstream_blocks:
   - airbnb/models/staging/airbnb_amsterdam
-  - airbnb/models/staging/airbnb_amsterdam
-  - airbnb/models/staging/airbnb_athens
-  - airbnb/models/staging/airbnb_barcelona
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -85,7 +82,8 @@ blocks:
   color: null
   configuration:
     file_path: airbnb/models/staging/airbnb_amsterdam.sql
-  downstream_blocks: []
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_lisbon
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -96,11 +94,12 @@ blocks:
   upstream_blocks:
   - load_today_parquet_files_to_bigquery
   uuid: airbnb/models/staging/airbnb_amsterdam
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_path: airbnb/models/staging/airbnb_athens.sql
-  downstream_blocks: []
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_berlin
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -109,13 +108,14 @@ blocks:
   status: not_executed
   type: dbt
   upstream_blocks:
-  - load_today_parquet_files_to_bigquery
+  - airbnb/models/staging/airbnb_lisbon
   uuid: airbnb/models/staging/airbnb_athens
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_path: airbnb/models/staging/airbnb_barcelona.sql
-  downstream_blocks: []
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_paris
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -124,8 +124,135 @@ blocks:
   status: not_executed
   type: dbt
   upstream_blocks:
-  - load_today_parquet_files_to_bigquery
+  - airbnb/models/staging/airbnb_budapest
   uuid: airbnb/models/staging/airbnb_barcelona
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_berlin.sql
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_budapest
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_berlin
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_athens
+  uuid: airbnb/models/staging/airbnb_berlin
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_budapest.sql
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_barcelona
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_budapest
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_berlin
+  uuid: airbnb/models/staging/airbnb_budapest
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_lisbon.sql
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_athens
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_lisbon
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_amsterdam
+  uuid: airbnb/models/staging/airbnb_lisbon
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_london.sql
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_vienna
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_london
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_paris
+  uuid: airbnb/models/staging/airbnb_london
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_paris.sql
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_london
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_paris
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_barcelona
+  uuid: airbnb/models/staging/airbnb_paris
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_rome.sql
+  downstream_blocks:
+  - airbnb/models/prod/airbnb_eu
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_rome
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_vienna
+  uuid: airbnb/models/staging/airbnb_rome
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/staging/airbnb_vienna.sql
+  downstream_blocks:
+  - airbnb/models/staging/airbnb_rome
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/staging/airbnb_vienna
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_london
+  uuid: airbnb/models/staging/airbnb_vienna
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: airbnb/models/prod/airbnb_eu.sql
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: airbnb/models/prod/airbnb_eu
+  status: not_executed
+  type: dbt
+  upstream_blocks:
+  - airbnb/models/staging/airbnb_rome
+  uuid: airbnb/models/prod/airbnb_eu
 data_integration: null
 description: null
 extensions: {}
