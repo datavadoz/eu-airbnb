@@ -1,5 +1,10 @@
 ME=$(readlink -f "${BASH_SOURCE:-$0}")
 export PROJECT_DIR=$(dirname $ME)
-export PYTHONPATH=${PYTHONPATH}:${PROJECT_DIR}/src
-#export GOOGLE_APPLICATION_CREDENTIALS='<YOUR_GCP_CREDENTIAL_JSON_PATH>'
-export GOOGLE_APPLICATION_CREDENTIALS='/home/danh/workspace/self-study/eu-airbnb/cred/dtc-airbnb-33c84c172b76.json'
+
+if [[ -z "${GOOGLE_APPLICATION_CREDENTIALS}" ]]; then
+  echo "${GOOGLE_APPLICATION_CREDENTIALS} is not defined"
+  return 1
+fi
+
+DBT_PROFILE=${PROJECT_DIR}/airbnb/dbt/airbnb/profiles.yml
+sed -i -r "s|keyfile: (.*)|keyfile: ${GOOGLE_APPLICATION_CREDENTIALS}|g" ${DBT_PROFILE}
