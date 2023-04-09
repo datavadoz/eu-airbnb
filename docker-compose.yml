@@ -2,11 +2,14 @@ version: '3'
 
 services:
   mage:
-    image: mageai/mageai:0.8.28
+    image: eu-airbnb:1.0.0
+    build:
+      dockerfile: Dockerfile
     container_name: airbnb_mage
-    volumes:
-      - ./airbnb:/home/src/airbnb
-      - ./data-source:/home/src/data-source
-    command: /app/run_app.sh mage start airbnb
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/home/src/cred/dtc-airbnb-33c84c172b76.json
+    command: /home/src/run_app.sh mage start airbnb
     ports:
       - "6789:6789"
+    volumes:
+      - ./cred/:/home/src/cred/
