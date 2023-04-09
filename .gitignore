@@ -5,6 +5,8 @@
 .log
 .logs/
 .preferences.yaml
+.terraform.lock.hcl
+.terraform
 .variables/
 __pycache__/
 docker-compose.override.yml
@@ -12,3 +14,4 @@ logs/
 mage-ai.db
 mage_data/
 secrets/
+terraform.tfstate
