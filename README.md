@@ -36,6 +36,7 @@ Technologies used in this project:
 6. Browse Mage UI `http://localhost:6789/pipelines/etl_end_to_end/triggers` and hit `Run pipeline now` button to run `etl_end_to_end` pipeline.
     ![End to end pipeline](./images/etl_end_to_end.jpg)
 ## Dashboard
+![Dashboard](./images/dashboard.png)
 
 Interactive dashboard is [here](https://lookerstudio.google.com/reporting/99e0048a-190e-475e-8009-66e833552386).
 
