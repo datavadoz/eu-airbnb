@@ -21,6 +21,16 @@ Technologies used in this project:
 - Infrastructure as Code: Terraform
 - BI tool: Google Looker
 
+![Architecture](./images/architecture.png)
+
+1. Terraform launches GCP resources (GCS, BigQuery).
+2. Docker launches Mage image where the pipeline runs in.
+3. Extract `archive.zip`.
+4. Clean and load raw data into GCS.
+5. Load cleansed data from GCS to BigQuery (staging).
+6. Transform staging data to production ready data.
+7. Visualize production data via dashboard.
+
 ## Instruction
 
 0. Create GCP project named `dtc-airbnb`.
