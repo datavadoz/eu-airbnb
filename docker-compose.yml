@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: airbnb_mage
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/home/src/cred/dtc-airbnb-33c84c172b76.json
+      - GOOGLE_APPLICATION_CREDENTIALS=/home/src/cred/<your_gcp_credential_json>
     command: /home/src/run_app.sh mage start airbnb
     ports:
       - "6789:6789"

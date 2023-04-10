@@ -19,18 +19,19 @@ Technologies used in this project:
 - Data lake: Google Cloud Storage
 - Data warehouse: Google BigQuery
 - Infrastructure as Code: Terraform
+- BI tool: Google Looker
 
 ## Instruction
 
 0. Create GCP project named `dtc-airbnb`.
-1. Create service account on GCP inside `dtc-airbnb` project with 4 following roles: **Actions Viewer**, **BigQuery Admin**, **Storage Admin**, **Storage Object Admin**. Then, download this GCP service account credential JSON file to somewhere on your machine and set the absolute path to `GOOGLE_APPLICATION_CREDENTIALS` environment variable: `export GOOGLE_APPLICATION_CREDENTIALS=<gcp_credential_json_path>`.
+1. Create service account on GCP inside `dtc-airbnb` project with 4 following roles: **Actions Viewer**, **BigQuery Admin**, **Storage Admin**, **Storage Object Admin**. Then, download this GCP service account credential JSON file to `./cred` (on the same directory level with this README) and set the absolute path to `GOOGLE_APPLICATION_CREDENTIALS` environment variable: `export GOOGLE_APPLICATION_CREDENTIALS=<gcp_credential_json_path>`.
 2. Bring GCP infrastructure up:
     ```
     cd infra
     terraform init
     terraform apply
     ``` 
-3. Edit environment variable `GOOGLE_APPLICATION_CREDENTIALS` value in `docker-compose.yml` with `<gcp_credential_json_path>` from step 1.
+3. Replace `<your_gcp_credential_json>` with your GCP credential JSON file name (e.g: `dtc-airbnb-33c84c172b76.json`) in the environment variable `GOOGLE_APPLICATION_CREDENTIALS` value inside `docker-compose.yml`.
 4. Build Docker image: `docker compose build`
 5. Bring Mage docker container up: `docker compose up -d`
 6. Browse Mage UI `http://localhost:6789/pipelines/etl_end_to_end/triggers` and hit `Run pipeline now` button to run `etl_end_to_end` pipeline.
