@@ -14,6 +14,7 @@ This project uses [Kaggle dataset](https://www.kaggle.com/datasets/thedevastator
 
 Technologies used in this project:
 
+- Containerization: Docker
 - Workflow orchestrator: Mage AI
 - Tranformation framework: DBT
 - Data lake: Google Cloud Storage
